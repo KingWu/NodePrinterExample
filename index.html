@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+</head>
+<body>
+
+  <button onclick="oneClickPrintFun1()">Sample 1</button>
+  <button onclick="oneClickPrintFun2()">Sample 2</button>
+
+  <script>
+    function oneClickPrintFun1()
+    {
+        var json = {
+          intentFromId: 'PR-AA0100001',
+          name: 'PR-AA0100001'
+        };
+
+        $.ajax({
+            url: 'http://127.0.0.1:3000/one_click_print',
+            type: 'POST',
+            crossDomain: true,
+            data: json,
+            dataType: "json",
+            success: function (response) {
+                console.log('success');
+                console.log(response);
+            },
+            error: function (xhr, status) {
+              console.log(xhr);
+              console.log(status);
+            }
+        });
+    }
+
+    function oneClickPrintFun2()
+    {
+        var json = {
+          intentFromId: 'PR-CC0112345',
+          name: 'PR-CC0112345'
+        };
+
+        $.ajax({
+            url: 'http://127.0.0.1:3000/one_click_print',
+            type: 'POST',
+            crossDomain: true,
+            data: json,
+            dataType: "json",
+            success: function (response) {
+                console.log('success');
+                console.log(response);
+            },
+            error: function (xhr, status) {
+              console.log(xhr);
+              console.log(status);
+            }
+        });
+    }
+  </script>
+</body>
+
+
+</html>
